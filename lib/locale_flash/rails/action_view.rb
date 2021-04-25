@@ -1,7 +1,6 @@
 module LocaleFlash
   module Rails
     module ActionView
-
       def locale_flash
         output = ''
         flash.each do |type, args|
@@ -9,14 +8,6 @@ module LocaleFlash
         end
         output.respond_to?(:html_safe) ? output.html_safe : output
       end
-
     end
-  end
-end
-
-
-module ActionView
-  class Base
-    include LocaleFlash::Rails::ActionView
   end
 end

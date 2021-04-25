@@ -1,9 +1,8 @@
 module LocaleFlash
   module Rails
     module ActionController
-      
-    private
-    
+      private
+
       def locale_flash(type, options={})
         flash[type] = LocaleFlash::Flash.new(
           :controller => controller_path,
@@ -21,11 +20,5 @@ module LocaleFlash
         locale_flash :alert, options
       end
     end
-  end
-end
-  
-module ActionController
-  class Base
-    include LocaleFlash::Rails::ActionController
   end
 end
